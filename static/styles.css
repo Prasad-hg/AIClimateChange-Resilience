@@ -1,0 +1,133 @@
+
+body {
+    background-size: cover;
+    background-position: center;
+    animation: backgroundSlideshow 15s infinite;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.transparent-form {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    color: #fff;
+}
+
+.transparent-form h4 {
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.transparent-form .form-control {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.transparent-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.transparent-form .form-group label {
+    color: #fff;
+    font-weight: bold;
+}
+
+.transparent-form .btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.transparent-form .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.transparent-form .form-control option,
+.transparent-form select {
+    background: rgba(0, 0, 0, 0.8); 
+    color: #fff; 
+}
+
+.transparent-form .form-control option:hover {
+    background: rgba(255, 255, 255, 0.3); 
+    color: #000; 
+}
+
+.transparent-form select {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff; 
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%; 
+    height: auto; 
+    font-size: 1rem; 
+}
+
+
+.transparent-form select option:disabled {
+    color: rgba(255, 255, 255, 0.5);
+}
+.result {
+    background: rgba(255, 255, 255, 0.5);
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: none;
+}
+
+
+header {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 5;
+}
+
+#about {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 4rem 2rem;
+    color: #fff;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.9);
+    color: #bbb;
+    padding: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes backgroundSlideshow {
+    0% { background-image: url('/static/images/clear-sky.jpg'); }
+    33% { background-image: url('/static/images/rainy.jpg'); }
+    66% { background-image: url('/static/images/snow.jpg'); }
+    100% { background-image: url('/static/images/clear-sky.jpg'); }
+}
+

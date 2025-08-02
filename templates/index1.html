@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Climate Change Resilience Using Machine Learning</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.5;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .graph {
+            flex: 1 1 calc(50% - 20px);
+            min-width: 400px;
+        }
+        #map-container {
+            width: 100%;
+            height: 500px;
+            margin-top: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <a class="navbar-brand text-white" href="#"> AIClimateChange Resilience</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link text-white" href="/starter">Ai➡️</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/visualize">Visualize➡️</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h1>Climate Visualization Dashboard</h1>
+
+    <!-- Plotly Graphs -->
+    <div class="container">
+        <div class="graph" id="graph1"></div>
+        <div class="graph" id="graph2"></div>
+    </div>
+
+    <!-- Folium Map -->
+    <div id="map-container">
+        {{ folium_map_html|safe }}
+    </div>
+
+    <!-- Plotly Script -->
+    <script>
+        const graph1 = {{ graph1_json | safe }};
+        const graph2 = {{ graph2_json | safe }};
+        Plotly.newPlot('graph1', graph1.data, graph1.layout);
+        Plotly.newPlot('graph2', graph2.data, graph2.layout);
+    </script>
+</body>
+</html>
